@@ -46,6 +46,12 @@
                     </a>
                 </li>
                 <li class="nav-link">
+                    <a class="btn" id="search-loc-btn" title="Search Location">
+                        <i class="fas fa-search"></i>
+                        <span class="nav-link-title">Search</span>
+                    </a>
+                </li>  
+                <li class="nav-link">
                     <a class="btn" id="get-loc-btn" title="Detect Location">
                         <i class="fas fa-compass"></i>
                         <span class="nav-link-title">Detect</span>
@@ -56,16 +62,39 @@
     
         <!-- Main -->
         <div class="container__main">
-            <div class="weather-dashboard p-4 m-4">
-                <div class="title-forecast"><h1>City</h1><p>country</p></div>
-                <div class="current-forecast mt-4">
-                    <div class="weather-icon d-flex align-items-baseline"></div>
-                    <h1 class="temp">Temp: 34</h1>
-                    <div class="additional-info d-flex flex-wrap row">Wind: 45 kmph</div>
+            <div class="weather-dashboard p-4 m-4 d-flex flex-column justify-content-center align-items-center">
+                <div class="title-forecast align-self-start text-light"></div>
+                <div class="current-forecast mt-4 align-self-start">
+                    <div class="weather-icon d-flex align-items-baseline mb-3"></div>
+                    <h1 class="temp"></h1>
+                    <div class="additional-info d-flex justify-content-center flex-wrap row"></div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Search location</h5>
+              <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <form id="search-form">
+            <div class="modal-body">
+              <input type="text" class="form-control" id="searchQuery" placeholder="search your location...">
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary"><i class="fas fa-search">&nbsp;Search</i></button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
   </body>
 
