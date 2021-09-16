@@ -20,7 +20,7 @@
       crossorigin="anonymous"
     />
 
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
 
     <!-- <link rel = "icon" href = "./img/encrypted.png" type = "image/x-icon"> -->
   </head>
@@ -28,7 +28,45 @@
   <title>Weather App</title>
 
   <body>
-      <main></main>
+
+      <div class="container-main">
+
+        <!-- Sidebar -->
+        <aside class="container__sidebar text-center">
+            <div class="logo">
+                <img src="./img/logo.png" class="mt-2" alt="Weather" style="height: 40px; width: 40px;">
+                <hr class="mx-2 bg-secondary">
+            </div>
+            <button class="toggle-btn btn btn-sm"> <i class="fas fa-chevron-circle-right fa-sm text-primary"></i> </button>
+            <ul class="nav-links d-flex flex-column px-4 align-items-center m-0">
+                <li class="nav-link">
+                    <a class="btn" href="/">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-link-title">Home</span>
+                    </a>
+                </li>
+                <li class="nav-link">
+                    <a class="btn" id="get-loc-btn" title="Detect Location">
+                        <i class="fas fa-compass"></i>
+                        <span class="nav-link-title">Detect</span>
+                    </a>
+                </li>  
+            </ul>
+        </aside>
+    
+        <!-- Main -->
+        <div class="container__main">
+            <div class="weather-dashboard p-4 m-4">
+                <div class="title-forecast"><h1>City</h1><p>country</p></div>
+                <div class="current-forecast mt-4">
+                    <div class="weather-icon d-flex align-items-baseline"></div>
+                    <h1 class="temp">Temp: 34</h1>
+                    <div class="additional-info d-flex flex-wrap row">Wind: 45 kmph</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
   </body>
 
   <!-- jQuery library -->
