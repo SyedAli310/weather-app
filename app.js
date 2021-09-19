@@ -94,6 +94,8 @@ $("#get-loc-btn").on("click", (e) => {
       }, 1000);
     }
     else{
+        $("#get-loc-btn").removeAttr("disabled");
+        $("#get-loc-btn").html(`<i class="fas fa-compass"></i><span class="nav-link-title">Detect</span>`);
         alert('Something went wrong.')
     }
   }, 2000);
