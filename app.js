@@ -48,7 +48,7 @@ async function getCurrWeather(url) {
           `<h1>${resData.name}</h1><span>${resData.sys.country}</span>`
         );
         $(".weather-icon").html(
-          `<img src='' alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
+          `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
         );
         $(".temp").html(
           `${resData.main.temp}&nbsp;<i class='fas fa-temperature-high'>c</i>`
@@ -58,12 +58,12 @@ async function getCurrWeather(url) {
         $(".additional-info").html(`
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Sunrise:</span> ${sunrise}  </span> 
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Sunrise:</span> ${sunset}  </span> 
-                    <br>
+                    <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Feels like :</span> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i>  </span> 
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Wind speed:</span> ${resData.wind.speed} kmph </span> 
+                    <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Visibility:</span> ${resData.visibility} </span> 
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Pressure:</span> ${resData.main.pressure} MB </span> 
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Humidity:</span> ${resData.main.humidity} </span> 
                     <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Cloud cover:</span> ${resData.clouds.all}  </span> 
-                    <span class='col-md-4 mb-4 text-nowrap'><span class='text-muted'>Feels like :</span> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i>  </span> 
                     `);
       }, 100);
     }, 2500);
