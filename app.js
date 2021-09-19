@@ -121,10 +121,11 @@ function fillInitialData() {
   } else if (localStorage.getItem("lat") != null && localStorage.getItem("lon") != null) {
     var url = `https://api.openweathermap.org/data/2.5/weather?lat=${localStorage.getItem("lat")}&lon=${localStorage.getItem("lon")}&units=metric&appid=d5eb3cfdf177ba5afa24e733af15e07c`
     getCurrWeather(url);
-  } else {
-    var url = `https://api.openweathermap.org/data/2.5/weather?q=New York,USA&units=metric&appid=d5eb3cfdf177ba5afa24e733af15e07c`;
-    getCurrWeather(url);
-  }
+  } 
+  // else {
+  //   var url = `https://api.openweathermap.org/data/2.5/weather?q=New York,USA&units=metric&appid=d5eb3cfdf177ba5afa24e733af15e07c`;
+  //   getCurrWeather(url);
+  // }
 }
 
 window.onload = fillInitialData()
