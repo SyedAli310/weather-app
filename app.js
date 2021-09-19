@@ -12,19 +12,19 @@ function getUserLocation(){
 
 async function getCurrWeather(location){
     const res = await fetch('http://api.weatherstack.com/current?access_key=520abc31ed5c719495950fa244b22ae9&query='+location)
-        const resData = await res.json()
+    const resData = await res.json()
 
-        console.log(resData);
+    console.log(resData);
 
-        $('.weather-dashboard').html(`<h1 class='text-center'>${spinner}</h1>    
-                                        <span>
-                                            <h4 style="color: lightblue;">
-                                                Please wait
-                                                <span class="dot-1">.</span>
-                                                <span class="dot-2">.</span>
-                                                <span class="dot-3">.</span>
-                                            </h4>
-                                        </span>
+    $('.weather-dashboard').html(`<h1 class='text-center'>${spinner}</h1>    
+                                    <span>
+                                        <h4 style="color: lightblue;">
+                                            Please wait
+                                            <span class="dot-1">.</span>
+                                            <span class="dot-2">.</span>
+                                            <span class="dot-3">.</span>
+                                        </h4>
+                                    </span>
     `)
 
         if(resData.success == false){
@@ -41,7 +41,6 @@ async function getCurrWeather(location){
                                                     <div class="additional-info d-flex flex-wrap row"></div>
                                               </div>`)
                 setTimeout(()=>{
-        
                     $('.title-forecast').html(`<h1>${resData.location.name}</h1><span>${resData.location.country}</span>`)
                     $('.weather-icon').html(`<img src=${resData.current.weather_icons[0]} alt='temp-icon' style='border-radius:10px;'> &nbsp;<span>${resData.current.weather_descriptions[0]}</span>`)
                     $('.temp').html(`${resData.current.temperature}&nbsp;<i class='fas fa-temperature-high'>c</i>`)
