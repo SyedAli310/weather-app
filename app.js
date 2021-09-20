@@ -59,42 +59,42 @@ async function getCurrWeather(url) {
         $(".additional-info").html(`
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Sunrise: </span> 
+                        <span class='additional-info-title'>Sunrise: </span> 
                         <span class='text-nowrap'> ${sunrise} </span>
                      </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Sunset: </span> 
+                        <span class='additional-info-title'>Sunset: </span> 
                         <span class='text-nowrap'>${sunset} </span> 
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Feels like: </span>
+                        <span class='additional-info-title'>Feels like: </span>
                         <span class='text-nowrap'> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i> </span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Wind speed </span>
+                        <span class='additional-info-title'>Wind speed </span>
                         <span class='text-nowrap'>${resData.wind.speed} kmph </span>
                     </div>
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Visibility </span>
+                        <span class='additional-info-title'>Visibility </span>
                         <span class='text-nowrap'>${resData.visibility} </span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Pressure </span>
+                        <span class='additional-info-title'>Pressure </span>
                         <span class='text-nowrap'> ${resData.main.pressure} MB</span> 
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Humidity </span>
+                        <span class='additional-info-title'>Humidity </span>
                         <span class='text-nowrap'>${resData.main.humidity}</span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='text-black'>Cloud cover </span>
+                        <span class='additional-info-title'>Cloud cover </span>
                         <span class='text-nowrap'>${resData.clouds.all} </span> 
                     </div> 
                     
