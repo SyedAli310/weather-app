@@ -153,6 +153,7 @@ ul{
 }
 
 
+
 .weather-dashboard{
     min-height: 50vh;
     background-color: rgb(173, 216, 230,0.2);
@@ -241,3 +242,69 @@ ul{
   .dot-3{
       animation: appearDisappear 2s ease forwards infinite;
   }
+
+
+  /* hero svg styles */
+
+  #hero-svg-weather{
+      width: 80%;
+      height: 80%;
+      overflow: hidden;
+  }
+  #hoverable-1,#hoverable-2,#hoverable-3,#hoverable-4,#hoverable-5{
+      transition: all ease 300ms;
+      animation: slideIntoView 2s ease 1s;
+      fill: lightblue;
+  }
+  #hoverable-bar-1, #hoverable-bar-2, #hoverable-bar-3, #hoverable-bar-4,#hoverable-bar-5{
+      transition: all ease 300ms;
+      transform: translateX(-15px);
+      fill: #001b1b !important;
+  }
+
+  #hoverable-1:hover,#hoverable-2:hover,#hoverable-3:hover,#hoverable-4:hover,#hoverable-5:hover{
+    fill: #001b1b !important;
+  } 
+
+  #hoverable-1:hover ~ #hoverable-bar-3{
+    transform: translateX(0);
+    fill: lightblue !important;
+
+  }
+  #hoverable-2:hover ~ #hoverable-bar-2{
+    transform: translateX(0);
+    fill: lightblue !important;
+
+  }
+  #hoverable-3:hover ~ #hoverable-bar-1{
+    transform: translateX(0);
+    fill: lightblue !important;
+
+  }
+  #hoverable-4:hover ~ #hoverable-bar-4{
+    transform: translateX(0);
+    fill: lightblue !important;
+
+  }
+  #hoverable-5:hover ~ #hoverable-bar-5{
+    transform: translateX(0);
+    fill: lightblue !important;
+  }
+
+  @keyframes slideIntoView {
+    0%{
+        transform: translateX(-100%);
+    }
+    90%{
+        transform: translateX(7.5px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+  }
+@media (max-width:500px){
+    #hero-svg-weather{
+        width: 90%;
+        height: 100%;
+    }
+}

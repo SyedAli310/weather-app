@@ -4,6 +4,7 @@ const spinner = `<div class="spinner"></div>`;
 
 let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
+
 function getUserLocation() {
   navigator.geolocation.getCurrentPosition((loc) => {
     localStorage.setItem("lat",loc.coords.latitude);
@@ -49,11 +50,20 @@ async function getCurrWeather(url) {
                                               </div>`);
       setTimeout(() => {
         $(".title-forecast").html(
-          `<h1><a href ='https://www.google.com/maps/place/${resData.name}/' id='map-link' target='_blank'><i class='fas fa-map-marker-alt fa-sm'></i></a>&nbsp;${resData.name}</h1><span class='text-center text-primary'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
+          `<h1><a href ='https://www.google.com/maps/place/${resData.name}/' id='map-link' target='_blank' title='Locate on map'><i class='fas fa-map-marker-alt fa-sm'></i></a>&nbsp;${resData.name}</h1><span class='text-center text-primary'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
         );
-        $(".weather-icon").html(
-          `<img src="https://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
-        );
+        if(getIcon(resData.weather[0].main)){
+          $(".weather-icon").html(
+            `${getIcon(resData.weather[0].main)}
+             <span>${resData.weather[0].main}</span>`
+          );
+        }else{
+          $(".weather-icon").html(
+            `<img src="https://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'>
+             &nbsp;
+             <span>${resData.weather[0].main}</span>`
+          );
+        }
         $(".temp").html(
           `${Math.round(resData.main.temp)}&nbsp;<i class='fas fa-temperature-high'>c</i>`
         );
@@ -107,6 +117,19 @@ async function getCurrWeather(url) {
   }
 }
 
+function getIcon(condition){
+  var validConditions = ['Clear','Clouds','Drizzle','Rain','Mist','Snow','Thunderstorm']
+  var icon ;
+  if(validConditions.includes(condition)){
+    icon = `<img src="./img/weather-condition-icons/animated/${condition}.svg" alt='${condition}' style='width:70px; height:70px;'`
+    return icon
+  }
+  else{
+    return false
+  }
+}
+
+
 $("#get-loc-btn").on("click", (e) => {
   $("#get-loc-btn").attr("disabled", "disabled");
   $("#get-loc-btn").html("");
@@ -114,7 +137,7 @@ $("#get-loc-btn").on("click", (e) => {
   getUserLocation();
   setTimeout(() => {
     if (localStorage.getItem("lat") != null && localStorage.getItem("lon") != null) {
-        console.log(localStorage.getItem("lat"),localStorage.getItem("lon"));
+        //console.log(localStorage.getItem("lat"),localStorage.getItem("lon"));
       $("#get-loc-btn").html(
         `<i class='fas fa-check text-success'>&nbsp;Done</i>`
       );
