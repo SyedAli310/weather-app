@@ -52,7 +52,7 @@ async function getCurrWeather(url) {
           `<h1><a href ='https://www.google.com/maps/place/${resData.name}/' id='map-link' target='_blank'><i class='fas fa-map-marker-alt fa-sm'></i></a>&nbsp;${resData.name}</h1><span class='text-center text-primary'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
         );
         $(".weather-icon").html(
-          `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
+          `<img src="https://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
         );
         $(".temp").html(
           `${Math.round(resData.main.temp)}&nbsp;<i class='fas fa-temperature-high'>c</i>`
