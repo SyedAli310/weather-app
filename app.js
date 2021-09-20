@@ -15,7 +15,7 @@ async function getCurrWeather(url) {
   const res = await fetch(url);
   const resData = await res.json();
 
-  console.log(resData);
+  //console.log(resData);   // -for dev purpose only-
 
   $(".weather-dashboard").html(`<h1 class='text-center'>${spinner}</h1>    
                                     <span>

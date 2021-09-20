@@ -159,7 +159,7 @@ ul{
     backdrop-filter: blur(4px);
     border-radius: 10px;
     color: black;
-    border-bottom: 5px solid var(--accent-color) !important;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
 }
 /* 
 #map-link{
