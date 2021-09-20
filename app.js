@@ -55,7 +55,7 @@ async function getCurrWeather(url) {
           `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
         );
         $(".temp").html(
-          `${resData.main.temp}&nbsp;<i class='fas fa-temperature-high'>c</i>`
+          `${Math.round(resData.main.temp)}&nbsp;<i class='fas fa-temperature-high'>c</i>`
         );
         sunrise = new Date(resData.sys.sunrise * 1000).toLocaleTimeString('en-US');
         sunset = new Date(resData.sys.sunset * 1000).toLocaleTimeString('en-US');
@@ -73,7 +73,7 @@ async function getCurrWeather(url) {
 
                     <div class='m-4 text-wrap text-center'>
                         <span class='additional-info-title'>Feels like: </span>
-                        <span class='text-nowrap'> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i> </span>
+                        <span class='text-nowrap'> ${Math.round(resData.main.feels_like)} &nbsp;<i class='fas fa-temperature-high'>c</i> </span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
