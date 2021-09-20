@@ -22,7 +22,7 @@ ul{
     outline: none;
     border: none;
     background-image: url('./img/modal-bg.png');
-    background-size:contain;
+    background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
