@@ -74,27 +74,27 @@ async function getCurrWeather(url) {
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='additional-info-title'>Wind speed </span>
+                        <span class='additional-info-title'>Wind speed: </span>
                         <span class='text-nowrap'>${resData.wind.speed} kmph </span>
                     </div>
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='additional-info-title'>Visibility </span>
+                        <span class='additional-info-title'>Visibility: </span>
                         <span class='text-nowrap'>${resData.visibility} </span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='additional-info-title'>Pressure </span>
+                        <span class='additional-info-title'>Pressure: </span>
                         <span class='text-nowrap'> ${resData.main.pressure} MB</span> 
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='additional-info-title'>Humidity </span>
+                        <span class='additional-info-title'>Humidity: </span>
                         <span class='text-nowrap'>${resData.main.humidity}</span>
                     </div> 
 
                     <div class='m-4 text-wrap text-center'>
-                        <span class='additional-info-title'>Cloud cover </span>
+                        <span class='additional-info-title'>Cloud cover: </span>
                         <span class='text-nowrap'>${resData.clouds.all} </span> 
                     </div> 
                     
