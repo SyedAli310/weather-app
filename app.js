@@ -15,7 +15,7 @@ async function getCurrWeather(url) {
   const res = await fetch(url);
   const resData = await res.json();
 
-  //console.log(resData);
+  console.log(resData);
 
   $(".weather-dashboard").html(`<h1 class='text-center'>${spinner}</h1>    
                                     <span>
@@ -28,7 +28,7 @@ async function getCurrWeather(url) {
                                     </span>
     `);
 
-  if (resData.message == 'city not found') {
+  if (resData.message == 'city not found' || resData.message == 'Nothing to geocode') {
     setTimeout(() => {
       $(".weather-dashboard").html(
         `<h3 class='text-center text-danger'>We were unable to find your location</h3><p class='text-center'>Please elaborate your search and try again.</p>`
@@ -46,7 +46,7 @@ async function getCurrWeather(url) {
                                               </div>`);
       setTimeout(() => {
         $(".title-forecast").html(
-          `<h1>${resData.name}</h1><span class='text-center' style='color:grey;'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
+          `<h1><a href ='https://www.google.com/maps/place/${resData.name}/' id='map-link' target='_blank'><i class='fas fa-map-marker-alt fa-sm'></i></a>&nbsp;${resData.name}</h1><span class='text-center text-primary'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
         );
         $(".weather-icon").html(
           `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
