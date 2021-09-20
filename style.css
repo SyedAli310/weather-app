@@ -43,8 +43,8 @@ ul{
     border: none;
 }
 #search-btn{
-    background: rgb(5, 41, 63);
-    color: white;
+    color: rgb(5, 41, 63);
+    background-color: white;
     font-weight: lighter;
     border: 0;
 }
@@ -84,7 +84,7 @@ ul{
 }
 
 .container__sidebar:hover{
-    width: 10em;
+    width: 15em;
 }
 .container__sidebar:hover .nav-link-title{
     display: inline;

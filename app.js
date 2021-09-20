@@ -103,6 +103,9 @@ $("#get-loc-btn").on("click", (e) => {
 
 $("#search-loc-btn").on("click", (e) => {
   $("#searchModal").modal();
+  setTimeout(()=>{
+    document.getElementById("searchQuery").focus();
+  },1000)
 });
 
 $("#search-form").on("submit", (e) => {
@@ -111,6 +114,7 @@ $("#search-form").on("submit", (e) => {
   var url = `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&units=metric&appid=d5eb3cfdf177ba5afa24e733af15e07c`;
   localStorage.setItem("searchedLocation", searchQuery);
   getCurrWeather(url);
+  $('#searchQuery').val("")
   $("#searchModal").modal("hide");
 });
 
