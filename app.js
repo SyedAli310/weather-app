@@ -31,7 +31,10 @@ async function getCurrWeather(url) {
   if (resData.message == 'city not found' || resData.message == 'Nothing to geocode') {
     setTimeout(() => {
       $(".weather-dashboard").html(
-        `<h3 class='text-center text-danger'>We were unable to find your location</h3><p class='text-center'>Please elaborate your search and try again.</p>`
+        `
+        <img src='./img/not-found.svg' alt='Location not found' style='height:200px;'>
+        <br>
+        <h3 class='text-center text-danger'>We were unable to find your location</h3><p class='text-center'>Please elaborate your search and try again.</p>`
       );
     }, 2000);
   } else {
