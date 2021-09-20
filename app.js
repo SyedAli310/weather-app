@@ -37,15 +37,15 @@ async function getCurrWeather(url) {
   } else {
     setTimeout(() => {
       $(".weather-dashboard")
-        .html(`<div class=" title-forecast align-self-start text-light"><h1></h1><p></p></div>
-                                                <div class="current-forecast mt-4 align-self-start">
-                                                    <div class="weather-icon d-flex align-items-baseline mb-3"></div>
-                                                    <h1 class="temp"></h1>
-                                                    <div class="additional-info d-flex flex-wrap row"></div>
+        .html(`<div class=" title-forecast text-center text-light"><h1></h1><p></p></div>
+                                                <div class="current-forecast mt-4 align-self-center">
+                                                    <div class="weather-icon d-flex justify-content-center align-items-center mb-3"></div>
+                                                    <h1 class="temp text-center"></h1>
+                                                    <div class="additional-info p-4 d-flex justify-content-center align-items-center flex-wrap"></div>
                                               </div>`);
       setTimeout(() => {
         $(".title-forecast").html(
-          `<h1>${resData.name}</h1><span>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
+          `<h1>${resData.name}</h1><span class='text-center'>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
         );
         $(".weather-icon").html(
           `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
@@ -56,14 +56,14 @@ async function getCurrWeather(url) {
         sunrise = new Date(resData.sys.sunrise * 1000).toLocaleTimeString('en-US');
         sunset = new Date(resData.sys.sunset * 1000).toLocaleTimeString('en-US');
         $(".additional-info").html(`
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Sunrise:</span> ${sunrise}  </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Sunset:</span> ${sunset}  </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Feels like :</span> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i>  </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Wind speed:</span> ${resData.wind.speed} kmph </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Visibility:</span> ${resData.visibility} </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Pressure:</span> ${resData.main.pressure} MB </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Humidity:</span> ${resData.main.humidity} </div> 
-                    <div class='m-4 text-wrap'><span class='text-primary' style='opacity:50%;'>Cloud cover:</span> ${resData.clouds.all}  </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Sunrise </span> <span class='text-nowrap'> ${sunrise} </span> </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Sunset </span> <span class='text-nowrap'>${sunset} </span> </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Feels like  </span><span class='text-nowrap'> ${resData.main.feels_like} &nbsp;<i class='fas fa-temperature-high'>c</i> </span> </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Wind speed </span> <span class='text-nowrap'>${resData.wind.speed} kmph </span></div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Visibility </span> <span class='text-nowrap'>${resData.visibility} </span></div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Pressure </span><span class='text-nowrap'> ${resData.main.pressure} MB</span> </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Humidity </span> <span class='text-nowrap'>${resData.main.humidity}</span> </div> 
+                    <div class='m-4 text-wrap'><span class='text-black' style='opacity:90%;'>Cloud cover </span> <span class='text-nowrap'>${resData.clouds.all} </span> </div> 
                     `);
       }, 100);
     }, 2500);

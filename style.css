@@ -144,16 +144,18 @@ ul{
 }
 
 .current-forecast{
-    padding: 1.2em;
     margin: 0;
-    width: 100%;
-    background-color: rgb(27, 27, 27,0.75);
-    backdrop-filter: blur(4px);
+    width: 100% !important;
     border-radius: 5px;
     color: white;
 }
 
+.sep{
+    height: 2.5px;
+    width: 100%;
+    background-color: #1b1b1b;
 
+}
 
 /* custom spinner styles */
 .spinner {
