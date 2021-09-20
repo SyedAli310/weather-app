@@ -45,7 +45,7 @@ async function getCurrWeather(url) {
                                               </div>`);
       setTimeout(() => {
         $(".title-forecast").html(
-          `<h1>${resData.name}</h1><span>${regionNames.of(resData.sys.country) }</span>`
+          `<h1>${resData.name}</h1><span>${resData.sys.country ? regionNames.of(resData.sys.country) : resData.name }</span>`
         );
         $(".weather-icon").html(
           `<img src="http://openweathermap.org/img/w/${resData.weather[0].icon}.png" alt='${resData.weather[0].icon}' style='border-radius:10px;'> &nbsp;<span>${resData.weather[0].main}</span>`
