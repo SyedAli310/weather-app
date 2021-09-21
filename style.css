@@ -100,6 +100,10 @@ ul{
         display: inline-flex;
         margin-bottom: 25px;
     }
+    .hero-text{
+        max-width: 100%;
+        font-size: 24px;
+    }
 }
 
 .container__sidebar:hover{
@@ -251,7 +255,9 @@ ul{
   }
 
 
-  /* hero svg styles */
+  /* hero/svg styles */
+
+
 
   #hero-svg-weather{
       width: 80%;
@@ -314,4 +320,9 @@ ul{
         width: 90%;
         height: 100%;
     }
+}
+
+footer{
+    position: relative;
+    bottom: 0;
 }
