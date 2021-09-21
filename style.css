@@ -186,7 +186,7 @@ ul{
 }
 
 .additional-info-title{
-    color: var(--accent-color) !important;
+    color: var(--accent-color, #001b1b) !important;
 }
 
 .sep{
