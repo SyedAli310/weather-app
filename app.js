@@ -118,7 +118,7 @@ async function getCurrWeather(url) {
 }
 
 function getIcon(condition){
-  var validConditions = ['Clear','Clouds','Drizzle','Rain','Mist','Snow','Thunderstorm']
+  var validConditions = ['Clear','Clouds','Drizzle','Rain','Mist','Snow','Haze','Thunderstorm']
   var icon ;
   if(validConditions.includes(condition)){
     icon = `<img src="./img/weather-condition-icons/animated/${condition}.svg" alt='${condition}' style='width:70px; height:70px;'`
