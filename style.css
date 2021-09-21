@@ -123,8 +123,8 @@ ul{
     position: relative;
     text-align: center;
     border-radius: 4px;
-    cursor: pointer;
     margin-bottom: 25px;
+    padding: 0;
 }
 
 .nav-link a{
@@ -133,7 +133,7 @@ ul{
     justify-content: center;
     gap: 0.5em;
     color: grey;
-    margin: 0;
+   margin: 0;
     width: 100%;
     height: 100%;
 }
