@@ -98,6 +98,7 @@ ul{
 @media (max-width:700px){
     .toggle-btn{
         display: inline-flex;
+        margin-bottom: 25px;
     }
 }
 
