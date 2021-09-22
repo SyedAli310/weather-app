@@ -76,6 +76,27 @@ ul{
     right: 0;
     background: #001b1b;
     z-index: 10;
+    user-select: none;
+}
+#logo-icon{
+    transition: all ease 300ms;
+}
+.logo:hover > a > #logo-icon{
+    animation: float 5s ease-in-out backwards infinite;
+}
+@keyframes float {
+    0%{
+        transform: translateX(0);
+    }
+    25%{
+        transform: translateX(100%);
+    }
+    50%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
 }
 .toggle-btn{
     display: none;
@@ -151,8 +172,9 @@ ul{
 
 .nav-link a{
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
+    justify-content:space-between;
     gap: 0.5em;
     color: grey;
    margin: 0;
@@ -160,8 +182,10 @@ ul{
     height: 100%;
 }
 
+
 .nav-link a:hover{
-    background-color: rgb(104, 107, 104,.5);
+    background-color: rgb(255, 255, 255,.1);
+    backdrop-filter: blur(4px);
     color: lightblue;
 }
 .nav-link a:hover .nav-link-title{

@@ -20,6 +20,10 @@
       crossorigin="anonymous"
     />
 
+    <!-- google material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 
     <link rel = "icon" href = "./img/logo.png" type = "image/x-icon">
@@ -34,6 +38,7 @@
         <div class="logo">
           <a href="/">
             <img
+            id="logo-icon"
             src="./img/logo.png"
             class="mt-2"
             alt="Weather"
@@ -49,25 +54,29 @@
         <ul class="nav-links d-flex flex-column px-4 align-items-center justify-content-between m-0">
               <li class="nav-link">
                 <a class="btn" href="/" title="Home">
-                  <i class="fas fa-home"></i>
+                  <span class="material-icons">cottage</span>
+                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
                   <span class="nav-link-title">Home</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="search-loc-btn" title="Search Location">
-                  <i class="fas fa-search"></i>
+                  <span class="material-icons">travel_explore</span>
+                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
                   <span class="nav-link-title">Search</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="get-loc-btn" title="Detect Location">
-                  <i class="fas fa-compass"></i>
+                  <span class="material-icons">explore</span>
+                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
                   <span class="nav-link-title">Detect</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="clear-history-btn" title="Clear history">
-                  <i class="fas fa-trash-alt"></i>
+                  <span class="material-icons">delete</span>
+                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
                   <span class="nav-link-title">Clear</span>
                 </a>
               </li>
@@ -208,6 +217,33 @@
         </div>
       </div>
     </div>
+
+
+    <div class="modal fade" id="errModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title text-danger" id="exampleModalLongTitle">
+              <i class="fas fa-exclamation-triangle "></i>
+              oops!
+            </h5>
+            <button
+            type="button"
+            class="close btn"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          </div>
+          <div class="modal-body text-center">
+            <h4 class="text-black ">Looks like you have disabled the location for this site.</h4>
+            <p class="text-dark">Please enable the location or use search instead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 
   <!-- jQuery library -->

@@ -7,10 +7,12 @@ const spinner = `<div class="spinner"></div>`;
 let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
 
 
-function getUserLocation() {
+function getUserLocation(init_call) {
   navigator.geolocation.getCurrentPosition((loc) => {
-    localStorage.setItem("lat",loc.coords.latitude);
-    localStorage.setItem("lon",loc.coords.longitude);
+    if(init_call == true){
+      localStorage.setItem("lat",loc.coords.latitude);
+      localStorage.setItem("lon",loc.coords.longitude);
+    }
   });
 }
 
@@ -135,13 +137,22 @@ function getIcon(condition){
 $("#get-loc-btn").on("click", (e) => {
   $("#get-loc-btn").attr("disabled", "disabled");
   $("#get-loc-btn").html("");
-  $("#get-loc-btn").html(spinner);
-  getUserLocation();
+  $('#get-loc-btn').css('justify-content','center')
+  $("#get-loc-btn").html(`                                    
+  <span>
+    <span style="color: lightblue;">
+        Wait
+        <span class="dot-1">.</span>
+        <span class="dot-2">.</span>
+        <span class="dot-3">.</span>
+    </span>
+  </span>`);
+  getUserLocation(true);
   setTimeout(() => {
     if (localStorage.getItem("lat") != null && localStorage.getItem("lon") != null) {
         //console.log(localStorage.getItem("lat"),localStorage.getItem("lon"));
       $("#get-loc-btn").html(
-        `<i class='fas fa-check text-success'>&nbsp;Done</i>`
+        `<span class='d-flex text-align-center justify-content-center flex-wrap'><span class="material-icons text-success">task_alt</span><span class='text-nowrap text-success'>&nbsp;Done</span></span>`
       );
 
       $("#get-loc-btn").removeAttr("disabled");
@@ -151,14 +162,19 @@ $("#get-loc-btn").on("click", (e) => {
       getCurrWeather(url);
 
       setTimeout(() => {
-        $("#get-loc-btn").html(`<i class="fas fa-compass"></i>
-                                        <span class="nav-link-title">Detect</span>`);
+        $('#get-loc-btn').css('justify-content','space-between')
+        $("#get-loc-btn").html(`<span class="material-icons">explore</span>
+                                <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+                                <span class="nav-link-title">Detect</span>`);
       }, 1000);
     }
     else{
+        $('#get-loc-btn').css('justify-content','space-between')
         $("#get-loc-btn").removeAttr("disabled");
-        $("#get-loc-btn").html(`<i class="fas fa-compass"></i><span class="nav-link-title">Detect</span>`);
-        alert('Something went wrong.')
+        $("#get-loc-btn").html(`<span class="material-icons">explore</span>
+        <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+        <span class="nav-link-title">Detect</span>`);
+        $('#errModal').modal()
     }
   }, 2000);
 });
@@ -228,3 +244,4 @@ $('.container__sidebar').on('mouseleave',()=>{
 
 
 window.onload = fillInitialData()
+window.onload = getUserLocation(false)
