@@ -88,8 +88,8 @@ ul{
     width: 14em;
     background-color: cornflowerblue;
     color: var(--light);
-    border-radius: 4px;
-    padding: 0.25em;
+    border-radius: 2px;
+    padding: 0.025em;
     z-index: 101;
 }
 
