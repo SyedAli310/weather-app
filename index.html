@@ -24,6 +24,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+      <link href="https://css.gg/css?=|home|search|pin|trash|chevron-right-o|remove|close|danger|check-o" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 
     <link rel = "icon" href = "./img/logo.png" type = "image/x-icon">
@@ -46,37 +48,37 @@
             title="Weather App"
           />
           </a>
-          <hr class="mx-2 bg-secondary" />
+          <hr class="mx-2 bg-secondary mb-4" />
         </div>
         <button class="toggle-btn btn btn-sm" id="toggle-btn">
-          <i class="fas fa-chevron-circle-right fa-sm text-primary" id="toggle-btn-i"></i>
+          <i class="gg-chevron-right-o text-primary" id="toggle-btn-i"></i>
         </button>
         <ul class="nav-links d-flex flex-column px-4 align-items-center justify-content-between m-0">
               <li class="nav-link">
                 <a class="btn" href="/" title="Home">
-                  <span class="material-icons">cottage</span>
-                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+                  <!-- <span class="material-icons">cottage</span> -->
+                  <i class="gg-home"></i>
                   <span class="nav-link-title">Home</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="search-loc-btn" title="Search Location">
-                  <span class="material-icons">travel_explore</span>
-                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+                  <!-- <span class="material-icons">travel_explore</span> -->
+                  <i class="gg-search"></i>
                   <span class="nav-link-title">Search</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="get-loc-btn" title="Detect Location">
-                  <span class="material-icons">explore</span>
-                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+                  <!-- <span class="material-icons">explore</span> -->
+                  <i class="gg-pin"></i>
                   <span class="nav-link-title">Detect</span>
                 </a>
               </li>
               <li class="nav-link">
                 <a class="btn" id="clear-history-btn" title="Clear history">
-                  <span class="material-icons">delete</span>
-                  <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+                  <!-- <span class="material-icons">delete</span> -->
+                  <i class="gg-remove"></i>
                   <span class="nav-link-title">Clear</span>
                 </a>
               </li>
@@ -182,7 +184,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">
-              <i class="fas fa-search fa-md"></i> Search location
+              <span class="d-flex align-items-center"><i class="gg-search"></i>&nbsp;&nbsp;Enter Location</span>
             </h5>
             <button
               type="button"
@@ -190,7 +192,7 @@
               data-dismiss="modal"
               aria-label="Close"
             >
-              <i class="fas fa-times"></i>
+              <i class="gg-close"></i>
             </button>
           </div>
           <form id="search-form">
@@ -199,7 +201,7 @@
                 type="text"
                 class="form-control"
                 id="searchQuery"
-                placeholder="search your location..."
+                placeholder="enter your location..."
                 autocomplete="off"
                 required
               />
@@ -210,7 +212,7 @@
                 id="search-btn"
                 class="btn btn-sm btn-success"
               >
-                <i class="fas fa-search">&nbsp;Search</i>
+              <span class="d-flex align-items-center"><i class="gg-search"></i>&nbsp;&nbsp;Find</span>
               </button>
             </div>
           </form>
@@ -223,21 +225,21 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title text-danger" id="exampleModalLongTitle">
-              <i class="fas fa-exclamation-triangle "></i>
-              oops!
-            </h5>
+            <h2 class="modal-title errModal-title d-flex align-items-center" id="exampleModalLongTitle" style="font-weight: bold;">
+              <i class="gg-danger"></i>
+            </h2>
             <button
             type="button"
             class="close btn"
             data-dismiss="modal"
             aria-label="Close"
           >
-            <i class="fas fa-times"></i>
+          <i class="gg-close"></i>
+
           </button>
           </div>
           <div class="modal-body text-center">
-            <h4 class="text-black ">Looks like you have disabled the location for this site.</h4>
+            <h4 class="text-light">Looks like you have disabled the location for this site.</h4>
             <p class="text-dark">Please enable the location or use search instead.</p>
           </div>
         </div>

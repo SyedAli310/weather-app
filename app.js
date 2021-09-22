@@ -152,7 +152,9 @@ $("#get-loc-btn").on("click", (e) => {
     if (localStorage.getItem("lat") != null && localStorage.getItem("lon") != null) {
         //console.log(localStorage.getItem("lat"),localStorage.getItem("lon"));
       $("#get-loc-btn").html(
-        `<span class='d-flex text-align-center justify-content-center flex-wrap'><span class="material-icons text-success">task_alt</span><span class='text-nowrap text-success'>&nbsp;Done</span></span>`
+        `<span class='d-flex text-align-center justify-content-center flex-wrap'>
+        <i class="gg-check-o text-success"></i>
+        <span class='text-nowrap text-success'>&nbsp;Done</span></span>`
       );
 
       $("#get-loc-btn").removeAttr("disabled");
@@ -163,16 +165,14 @@ $("#get-loc-btn").on("click", (e) => {
 
       setTimeout(() => {
         $('#get-loc-btn').css('justify-content','space-between')
-        $("#get-loc-btn").html(`<span class="material-icons">explore</span>
-                                <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+        $("#get-loc-btn").html(`<i class="gg-pin"></i>
                                 <span class="nav-link-title">Detect</span>`);
       }, 1000);
     }
     else{
         $('#get-loc-btn').css('justify-content','space-between')
         $("#get-loc-btn").removeAttr("disabled");
-        $("#get-loc-btn").html(`<span class="material-icons">explore</span>
-        <span class="material-icons nav-link-title">keyboard_arrow_right</span>
+        $("#get-loc-btn").html(`<i class="gg-pin"></i>
         <span class="nav-link-title">Detect</span>`);
         $('#errModal').modal()
     }
