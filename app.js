@@ -203,15 +203,26 @@ $('.toggle-btn').on('click',(e)=>{
       setTimeout(()=>{
         $('.tool-tip').css('opacity','0')  
         $('.tool-tip').css('display','none')  
+        tooltip.remove()
       },3000)
+      console.log('hello');
     }
 })
 
-$('.container-main').on('click',()=>{
-  if ($('.toggle-btn').find('.tool-tip').length) {
+// $('.container__main').on('click',(e)=>{
+//   if ($('.toggle-btn').find('.tool-tip').length){
+//     $('.tool-tip').css('opacity','0')  
+//     $('.tool-tip').css('display','none') 
+//     console.log('bye');
+// }
+// })
+
+$("body").on('click',(e)=>{
+  if ($('.toggle-btn').find('.tool-tip').length && e.target.id!='toggle-btn' && e.target.id!='toggle-btn-i'){
     $('.tool-tip').css('opacity','0')  
     $('.tool-tip').css('display','none') 
 }
 })
+
 
 window.onload = fillInitialData()
