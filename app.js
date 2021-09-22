@@ -196,11 +196,14 @@ function fillInitialData() {
 
 $('.toggle-btn').on('click',(e)=>{
     if($('.container__sidebar').width() == 240){
+      if(x){
+        clearTimeout(x)
+      }
       let tooltip = document.createElement('span')
       tooltip.classList.add('tool-tip')
       tooltip.innerText=`Click outside to minimise.`
       toggleBtn.appendChild(tooltip)
-      setTimeout(()=>{
+      var x = setTimeout(()=>{
         $('.tool-tip').css('opacity','0')  
         $('.tool-tip').css('display','none')  
         tooltip.remove()
@@ -209,16 +212,17 @@ $('.toggle-btn').on('click',(e)=>{
     }
 })
 
-// $('.container__main').on('click',(e)=>{
-//   if ($('.toggle-btn').find('.tool-tip').length){
+
+
+// $('body').on('click',(e)=>{
+//   if ($('.toggle-btn').find('.tool-tip').length && e.target.id!='toggle-btn' && e.target.id!='toggle-btn-i'){
 //     $('.tool-tip').css('opacity','0')  
 //     $('.tool-tip').css('display','none') 
 //     console.log('bye');
 // }
 // })
-
-$(".container-main").on('click',(e)=>{
-  if ($('.toggle-btn').find('.tool-tip').length && e.target.id!='toggle-btn' && e.target.id!='toggle-btn-i'){
+$('.container__sidebar').on('mouseleave',()=>{
+  if ($('.toggle-btn').find('.tool-tip').length){
     $('.tool-tip').css('opacity','0')  
     $('.tool-tip').css('display','none') 
     console.log('bye');
