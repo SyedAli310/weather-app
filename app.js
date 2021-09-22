@@ -212,20 +212,10 @@ $('.toggle-btn').on('click',(e)=>{
     }
 })
 
-
-
-// $('body').on('click',(e)=>{
-//   if ($('.toggle-btn').find('.tool-tip').length && e.target.id!='toggle-btn' && e.target.id!='toggle-btn-i'){
-//     $('.tool-tip').css('opacity','0')  
-//     $('.tool-tip').css('display','none') 
-//     console.log('bye');
-// }
-// })
 $('.container__sidebar').on('mouseleave',()=>{
   if ($('.toggle-btn').find('.tool-tip').length){
     $('.tool-tip').css('opacity','0')  
     $('.tool-tip').css('display','none') 
-    console.log('bye');
 }
 })
 

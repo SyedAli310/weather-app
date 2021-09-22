@@ -75,10 +75,12 @@ ul{
     left: 0;
     right: 0;
     background: #001b1b;
+    z-index: 10;
 }
 .toggle-btn{
     display: none;
     position: relative;
+    z-index: 5;
 }
 .tool-tip{
     position: absolute;
@@ -95,7 +97,7 @@ ul{
 
 .container__sidebar {
     width: 4em;
-    height: 100vh;
+    height: 100vh !important;
     position: fixed;
     top: 0;
     left: 0;
@@ -136,7 +138,10 @@ ul{
     display: none;
 }
 
-
+.nav-links{
+    height: 90%;
+    z-index: 5;
+}
 .nav-link{
     position: relative;
     text-align: center;
