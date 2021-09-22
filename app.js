@@ -207,4 +207,11 @@ $('.toggle-btn').on('click',(e)=>{
     }
 })
 
+$('.container__main').on('click',()=>{
+  if ($('.toggle-btn').find('.tool-tip').length) {
+    $('.tool-tip').css('opacity','0')  
+    $('.tool-tip').css('display','none') 
+}
+})
+
 window.onload = fillInitialData()
