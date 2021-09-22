@@ -78,7 +78,21 @@ ul{
 }
 .toggle-btn{
     display: none;
+    position: relative;
 }
+.tool-tip{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,50%);
+    width: 14em;
+    background-color: #1b1b1b;
+    color: var(--primary);
+    border-radius: 4px;
+    padding: 0.25em;
+    z-index: 101;
+}
+
 .container__sidebar {
     width: 4em;
     height: 100vh;

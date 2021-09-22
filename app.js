@@ -1,5 +1,7 @@
 const locationSpan = document.querySelector(".location");
 
+const toggleBtn = document.querySelector(".toggle-btn");
+
 const spinner = `<div class="spinner"></div>`;
 
 let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
@@ -191,5 +193,18 @@ function fillInitialData() {
   //   getCurrWeather(url);
   // }
 }
+
+$('.toggle-btn').on('click',(e)=>{
+    if($('.container__sidebar').width() == 240){
+      let tooltip = document.createElement('span')
+      tooltip.classList.add('tool-tip')
+      tooltip.innerText=`Click outside to minimise.`
+      toggleBtn.appendChild(tooltip)
+      setTimeout(()=>{
+        $('.tool-tip').css('opacity','0')  
+        $('.tool-tip').css('display','none')  
+      },3000)
+    }
+})
 
 window.onload = fillInitialData()
