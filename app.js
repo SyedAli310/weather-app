@@ -217,7 +217,7 @@ $('.toggle-btn').on('click',(e)=>{
 // }
 // })
 
-$("container-main").on('click',(e)=>{
+$(".container-main").on('click',(e)=>{
   if ($('.toggle-btn').find('.tool-tip').length && e.target.id!='toggle-btn' && e.target.id!='toggle-btn-i'){
     $('.tool-tip').css('opacity','0')  
     $('.tool-tip').css('display','none') 
