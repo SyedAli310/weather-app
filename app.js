@@ -170,6 +170,11 @@ $("#search-loc-btn").on("click", (e) => {
   },1000)
 });
 
+$('#clear-history-btn').on('click',()=>{
+  localStorage.clear()
+  window.location.reload()
+})
+
 $("#search-form").on("submit", (e) => {
   e.preventDefault();
   var searchQuery = $("#searchQuery").val();
@@ -193,6 +198,8 @@ function fillInitialData() {
   //   getCurrWeather(url);
   // }
 }
+
+
 
 $('.toggle-btn').on('click',(e)=>{
     if($('.container__sidebar').width() == 240){
