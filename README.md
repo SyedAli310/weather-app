@@ -1,2 +1,2 @@
 # Weather App
-Get instant weather information.
+Get instant weather information
